@@ -12,8 +12,8 @@ const Intro = () => {
       </div>
       <div className="sm:w-5xl max-sm:px-4 w-full py-4 flex text-accent flex-row z-10 self-center items-end justify-between relative">
         <div className="flex flex-col gap-2 justify-center">
-          <h1 className="sm:text-xl dark:text-zinc-300">Hi, my name is</h1>
-          <h1 className="sm:text-4xl text-2xl font-bold flex flex-col dark:text-zinc-300">
+          <h1 className="sm:text-xl text-zinc-900 dark:text-zinc-300">Hi, my name is</h1>
+          <h1 className="sm:text-4xl text-2xl font-bold flex flex-col text-zinc-900 dark:text-zinc-300">
             Tanzim Khan Shanto.
           </h1>
         </div>

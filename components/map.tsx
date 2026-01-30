@@ -3,9 +3,11 @@
 import { useEffect, useRef } from "react";
 import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
+import { useTheme } from "next-themes";
 
 export default function MapBanner() {
   const mapContainer = useRef(null);
+  const { resolvedTheme } = useTheme();
 
   useEffect(() => {
     if (!mapContainer.current) return;
@@ -15,7 +17,8 @@ export default function MapBanner() {
 
     const map = new maplibregl.Map({
       container: mapContainer.current,
-      style: "https://tiles.basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json",
+      style: (resolvedTheme === "dark" ? "https://tiles.basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json" :
+        "https://tiles.basemaps.cartocdn.com/gl/positron-gl-style/style.json"),
       center: [90, 25],  // Asia
       zoom: 3.3,
       pitch: 0,
@@ -57,7 +60,7 @@ export default function MapBanner() {
     });
 
     return () => map.remove();
-  }, []);
+  }, [resolvedTheme]);
 
   return (
     <div className="w-265 max-sm:w-screen relative">
@@ -67,7 +70,7 @@ export default function MapBanner() {
         style={{ height: "250px" }}
       />
       <div className="absolute inset-0 cursor-default z-100" />
-      <div className="absolute inset-0 bg-linear-to-b from-transparent to-black" />
+      <div className="absolute inset-0 bg-linear-to-b from-transparent from-15% to-white dark:to-black" />
     </div>
   );
 }
