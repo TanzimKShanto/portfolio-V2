@@ -1,56 +1,68 @@
-"use client";
+import type { Metadata } from "next";
 import { Geist, Geist_Mono, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
-import ThemeShortcut from "@/components/themeShortcut";
-import { Toaster } from "@/components/ui/sonner";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import useLenis from "@/hooks/useLenis";
+import Providers from "@/components/provider";
 
-const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-sans' });
+export const metadata: Metadata = {
+  metadataBase: new URL("https://tanzimk-shanto.vercel.app"),
+  title: "Tanzim Khan Shanto — Full-Stack Developer",
+  description: "Full-stack developer building fast, type-safe web apps with Next.js, Astro, and Go. Passionate about performance and clean UI.",
+  keywords: "Tanzim Khan Shanto, Full Stack Developer, Next.js, Astro, Go, Web Developer",
+  openGraph: {
+    title: "Tanzim Khan Shanto — Full-Stack Developer",
+    description: "Full-stack developer building fast, type-safe web apps with Next.js, Astro, and Go. Passionate about performance and clean UI.",
+    images: [
+      {
+        url: "https://tanzimk-shanto.vercel.app/images/self-photo.png",
+        width: 1024,
+        height: 1024,
+        alt: "Tanzim Khan Shanto — Full-Stack Developer",
+      },
+    ],
+    url: "https://tanzimk-shanto.vercel.app",
+    siteName: "Tanzim Khan Shanto",
+    locale: "en-US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tanzim Khan Shanto — Full-Stack Developer",
+    description: "Full-stack developer building fast, type-safe web apps with Next.js, Astro, and Go. Passionate about performance and clean UI.",
+    creator: "@tanzimkshanto",
+    images: ["https://tanzimk-shanto.vercel.app/images/self-photo.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
   subsets: ["latin"],
+  variable: "--font-geist-sans",
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
   subsets: ["latin"],
+  variable: "--font-geist-mono",
 });
-
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
-  const queryClient = new QueryClient();
-  useLenis();
+}) {
   return (
     <html lang="en" suppressHydrationWarning className={jetbrainsMono.variable}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased relative flex min-h-screen flex-col items-center justify-between`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased relative min-h-screen`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <QueryClientProvider client={queryClient}>
-            <ThemeShortcut />
-            {children}
-          </QueryClientProvider>
-          <Toaster
-            toastOptions={{
-              style: {
-                borderRadius: "0px"
-              }
-            }
-            }
-          />
-        </ThemeProvider>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
