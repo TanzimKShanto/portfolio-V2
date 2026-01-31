@@ -5,16 +5,17 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 export default function Experience() {
   const experienceData = [
     {
-      title: "Frontend Developer",
-      company: "Arbree Limited — External Team (PaiPixel)",
+      title: "Full Stack Developer",
+      company: "PaiPixel",
       location: "Remote",
       duration: "2025 - Present",
-      stacks: ["NextJs", "DndKit", "Typescript", "TailwindCSS", "Shadcn/Ui", "Ant Design", "Tanstack query"],
+      stacks: ["NextJs", "DndKit", "Typescript", "CI/CD", "Go Lang", "Astro"],
       responsibilities: [
-        "Frontend assessment module in Next.js with strong type safety",
-        "Custom drag-and-drop form builder (Dnd Kit)",
-        "Pixel-perfect, responsive UI from Figma",
-        "Cross-team collaboration for efficient delivery",
+        "Build type-safe frontends using Next.js and Astro",
+        "Develop a custom drag-and-drop form builder with DnD Kit",
+        "Implement pixel-perfect, fully responsive UIs from Figma designs",
+        "Collaborate with cross-functional teams to ensure efficient delivery",
+        "Develop high-performance backend services using Go",
       ]
     },
     {

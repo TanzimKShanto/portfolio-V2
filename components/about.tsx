@@ -14,7 +14,7 @@ export default function About() {
     }
   ]
   return (
-    <div id="about" className="sm:w-5xl w-full max-sm:px-4 py-6 self-center flex flex-col gap-8">
+    <div id="about" className="sm:w-5xl relative w-full max-sm:px-4 py-6 self-center flex flex-col gap-8">
       <h1 className="font-bold sm:text-4xl text-2xl">
         <span className="text-primary">01.</span>
         About Me
