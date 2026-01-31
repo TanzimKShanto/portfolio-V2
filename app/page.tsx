@@ -7,10 +7,10 @@ import Projects from "@/components/projects";
 
 export default function Page() {
   return (
-    <>
-      <div className="container relative flex flex-col grid-bg">
+    <div className="flex flex-col items-center grid-bg">
+      <Menubar />
+      <div className="container relative flex flex-col">
         {/* <div className="absolute inset-0 bg-halftone-fade" /> */}
-        <Menubar />
         <Hero />
         <About />
         <Projects />
@@ -19,6 +19,6 @@ export default function Page() {
       <div className="w-full bg-zinc-950 p-4 flex items-center justify-center">
         <Footer />
       </div>
-    </>
+    </div>
   )
 }

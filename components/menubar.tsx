@@ -56,66 +56,68 @@ export default function Menubar() {
   const toggleDrawer = () => setIsOpen(!isOpen);
 
   return (
-    <div className={`flex flex-row gap-6 max-sm:px-4 shadow-xs items-center justify-end sticky top-0 bg-background h-16 z-50 transition-all duration-500 w-full 
+    <div className={`flex flex-row items-center justify-center sticky top-0 shadow-xs bg-background h-16 z-50 transition-all duration-500 w-full 
       ${scrollDir === "down" ? "-translate-y-full" : "translate-y-0"}
 `}>
-      {sectionNavs.map((link, index) =>
-        <a
-          className="hover:underline hover:text-primary text-sm max-sm:hidden"
-          key={index}
-          href={link.href}>
-          <span className="text-primary">0{index + 1}.</span>
-          {link.title}
-        </a>
-      )}
-      {sectionIconNavs.map((link, index) =>
-        <a
-          target="_blank"
-          className="hover:text-primary max-sm:hidden"
-          key={index}
-          href={link.href}>
-          {link.icon}
-        </a>
-      )}
-      <Tooltip>
-        <TooltipTrigger asChild className="">
-          <Button variant={"ghost"} size={"icon"} className="hover:bg-transparent w-5 h-5 dark:hover:bg-transparent hover:text-primary" onClick={themeToggle}>
-            <IconBrightness className="min-w-5 min-h-5" />
-          </Button>
-        </TooltipTrigger>
-        <TooltipContent>
-          Toggle Mode <span className="px-2 z-100 py-0.5 bg-muted/20">D</span>
-        </TooltipContent>
-      </Tooltip>
-      <Drawer direction="right" open={isOpen} onOpenChange={toggleDrawer}>
-        <DrawerTrigger asChild className="sm:hidden">
-          <IconMenu />
-        </DrawerTrigger>
-        <DrawerContent className="flex flex-col gap-4 p-4">
-          <DrawerClose className="w-full flex items-end justify-end"><IconX /></DrawerClose>
-          {sectionNavs.map((link, index) =>
-            <a
-              onClick={toggleDrawer}
-              className="hover:underline hover:text-primary text-lg"
-              key={index}
-              href={link.href}>
-              <span className="text-primary">0{index + 1}.</span>
-              {link.title}
-            </a>
-          )}
-          <div className="flex flex-row gap-2">
-            {sectionIconNavs.map((link, index) =>
+      <div className="flex flex-row gap-6 items-center justify-end max-sm:px-4 container h-full">
+        {sectionNavs.map((link, index) =>
+          <a
+            className="hover:underline hover:text-primary text-sm max-sm:hidden"
+            key={index}
+            href={link.href}>
+            <span className="text-primary">0{index + 1}.</span>
+            {link.title}
+          </a>
+        )}
+        {sectionIconNavs.map((link, index) =>
+          <a
+            target="_blank"
+            className="hover:text-primary max-sm:hidden"
+            key={index}
+            href={link.href}>
+            {link.icon}
+          </a>
+        )}
+        <Tooltip>
+          <TooltipTrigger asChild className="">
+            <Button variant={"ghost"} size={"icon"} className="hover:bg-transparent w-5 h-5 dark:hover:bg-transparent hover:text-primary" onClick={themeToggle}>
+              <IconBrightness className="min-w-5 min-h-5" />
+            </Button>
+          </TooltipTrigger>
+          <TooltipContent>
+            Toggle Mode <span className="px-2 z-100 py-0.5 bg-muted/20">D</span>
+          </TooltipContent>
+        </Tooltip>
+        <Drawer direction="right" open={isOpen} onOpenChange={toggleDrawer}>
+          <DrawerTrigger asChild className="sm:hidden">
+            <IconMenu />
+          </DrawerTrigger>
+          <DrawerContent className="flex flex-col gap-4 p-4">
+            <DrawerClose className="w-full flex items-end justify-end"><IconX /></DrawerClose>
+            {sectionNavs.map((link, index) =>
               <a
-                target="_blank"
-                className="hover:text-primary"
+                onClick={toggleDrawer}
+                className="hover:underline hover:text-primary text-lg"
                 key={index}
                 href={link.href}>
-                {link.icon}
+                <span className="text-primary">0{index + 1}.</span>
+                {link.title}
               </a>
             )}
-          </div>
-        </DrawerContent>
-      </Drawer>
+            <div className="flex flex-row gap-2">
+              {sectionIconNavs.map((link, index) =>
+                <a
+                  target="_blank"
+                  className="hover:text-primary"
+                  key={index}
+                  href={link.href}>
+                  {link.icon}
+                </a>
+              )}
+            </div>
+          </DrawerContent>
+        </Drawer>
+      </div>
     </div>
   );
 }
