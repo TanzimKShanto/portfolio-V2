@@ -4,11 +4,13 @@ import Footer from "@/components/footer";
 import Hero from "@/components/hero";
 import Menubar from "@/components/menubar";
 import Projects from "@/components/projects";
+import ScrollToTop from "@/components/scrollToTop";
 
 export default function Page() {
   return (
-    <div className="flex flex-col items-center grid-bg">
+    <div className="flex relative flex-col items-center grid-bg">
       <Menubar />
+      <ScrollToTop />
       <div className="container relative flex flex-col">
         {/* <div className="absolute inset-0 bg-halftone-fade" /> */}
         <Hero />

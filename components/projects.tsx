@@ -3,20 +3,29 @@ import { IconBrandGithub, IconExternalLink, } from "@tabler/icons-react"
 import { Badge } from "./ui/badge"
 import { useRef } from "react"
 import { Button } from "./ui/button"
+import { title } from "process"
 
 export default function Projects() {
   const projects = [
     {
-      title: "Resource Hub",
+      title: "Realtime Chat",
       type: "Web App",
       badgeColor: "bg-green-400",
-      description: "A web platform where users can request books, download books, and subscribe to a newsletter – all in a seamless, secure, and responsive experience.",
-      liveLink: "https://r-hub.xyz",
-      gitLink: "https://github.com/tanzimKshanto/resource-hub",
-      stacks: ["Next.js", "TypeScript", "Firebase", "Shadcn/UI"],
-      img: "/images/resourceHub.png",
-      hasLive: true,
-      hasGit: true
+      description: "Built a modern real-time chat app with instant messaging via WebSockets, supporting reactions, threaded replies, message pinning, jump-to-latest, and a responsive UI that works smoothly across devices.",
+      stacks: ["WebSockets", "Next.js", "Nest.js", "Redis", "TypeScript"],
+      img: "/images/realtimeChat.png",
+      hasLive: false,
+      hasGit: false
+    },
+    {
+      title: "Drag-and-Drop Form Builder",
+      type: "Web App",
+      badgeColor: "bg-green-400",
+      description: "Built an interactive drag-and-drop assessment builder that lets users visually create, reorder, and edit forms or tests in real time—no coding required. Features a responsive, intuitive interface and scalable architecture for smooth handling of complex assessments.",
+      stacks: ["Next.js", "TypeScript", "Figma", "DnD Kit"],
+      img: "/images/assessmentBuilder.png",
+      hasLive: false,
+      hasGit: false
     },
     {
       title: "PaiPixel",
@@ -30,16 +39,28 @@ export default function Projects() {
       hasGit: false
     },
     {
-      title: "NetMeter Lite",
-      type: "Windows Software",
-      badgeColor: "bg-red-400",
-      description: "NetMeter Lite is a lightweight, real-time monitoring tool for network speed, CPU, and memory usage, offering a simple and customizable interface for Windows. Perfect for users who want to keep track of their device’s performance without any hassle.",
-      gitLink: "https://github.com/tanzimKshanto/NetMeter-Lite",
-      stacks: ["Python", "Tkinter", "Pyinstaller", "Pywin32"],
-      img: "/images/netmeterLite.png",
-      hasLive: false,
+      title: "Resource Hub",
+      type: "Web App",
+      badgeColor: "bg-green-400",
+      description: "A web platform where users can request books, download books, and subscribe to a newsletter – all in a seamless, secure, and responsive experience.",
+      liveLink: "https://r-hub.xyz",
+      gitLink: "https://github.com/tanzimKshanto/resource-hub",
+      stacks: ["Next.js", "TypeScript", "Firebase", "Shadcn/UI"],
+      img: "/images/resourceHub.png",
+      hasLive: true,
       hasGit: true
     },
+    // {
+    //   title: "NetMeter Lite",
+    //   type: "Windows Software",
+    //   badgeColor: "bg-red-400",
+    //   description: "NetMeter Lite is a lightweight, real-time monitoring tool for network speed, CPU, and memory usage, offering a simple and customizable interface for Windows. Perfect for users who want to keep track of their device’s performance without any hassle.",
+    //   gitLink: "https://github.com/tanzimKshanto/NetMeter-Lite",
+    //   stacks: ["Python", "Tkinter", "Pyinstaller", "Pywin32"],
+    //   img: "/images/netmeterLite.png",
+    //   hasLive: false,
+    //   hasGit: true
+    // },
     // {
     //   title: "Media Rush",
     //   type: "Discord Bot",
@@ -78,7 +99,7 @@ export default function Projects() {
             rel="noopener noreferrer"
             key={index}
             className="grid sm:grid-cols-10 grid-cols-1 gap-4 group cursor-pointer hover:bg-primary/10 border-t-2 border-t-transparent hover:border-t-primary/30 transition-all hover:shadow-md p-4">
-            <div className={`aspect-5/3 sm:row-span-full sm:col-span-5 ${index & 1 ? "sm:col-end-11" : "sm:col-start-1"} relative`}>
+            <div className={`aspect-99/79 sm:row-span-full sm:p-6 sm:col-span-5 ${index & 1 ? "sm:col-end-11" : "sm:col-start-1"} relative`}>
               {/* <div className="absolute inset-0 bg-primary mix-blend-screen group-hover:bg-transparent transition-all" /> */}
               <img src={project.img} alt={project.title} className={`h-full w-full border-2 border-zinc-200 group-hover:border-zinc-300 transition-all`} />
             </div>
