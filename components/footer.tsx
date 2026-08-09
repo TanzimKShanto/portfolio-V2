@@ -23,7 +23,7 @@ export default function Footer() {
   return (
     <div id="contact" className="flex flex-col items-center justify-center gap-8 w-5xl py-6">
       <h1 className="font-bold text-accent dark:text-zinc-300">
-        <span className="text-primary">04.</span>
+        <span className="text-primary">05.</span>
         Contact
       </h1>
       <h1 className="text-accent sm:text-6xl text-4xl font-bold dark:text-zinc-300">Let&apos;s Talk.</h1>
@@ -33,7 +33,7 @@ export default function Footer() {
             <CardTitle className="text-muted-foreground max-sm:text-xs">CALL ME</CardTitle>
           </CardHeader>
           <CardContent className="sm:text-4xl text-lg wrap-break-word">
-            <p>01303665747</p>
+            <a href="tel:+8801303665747" className="hover:text-primary transition-colors">+8801303665747</a>
           </CardContent>
         </Card>
         <Card className="bg-zinc-900 text-accent dark:text-zinc-300 border border-zinc-800">
@@ -41,7 +41,7 @@ export default function Footer() {
             <CardTitle className="text-muted-foreground max-sm:text-xs">MAIL ME</CardTitle>
           </CardHeader>
           <CardContent className="sm:text-4xl text-lg wrap-break-word">
-            <p>tanzimk.shanto@gmail.com</p>
+            <a href="mailto:hello@tanzimkshanto.dev" className="hover:text-primary transition-colors">hello@tanzimkshanto.dev</a>
           </CardContent>
         </Card>
       </div>

@@ -29,6 +29,10 @@ export default function Menubar() {
       href: "#experience",
     },
     {
+      title: "TESTIMONIALS",
+      href: "#testimonials",
+    },
+    {
       title: "CONTACT",
       href: "#contact",
     }

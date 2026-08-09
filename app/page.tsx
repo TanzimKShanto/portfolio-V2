@@ -5,6 +5,7 @@ import Hero from "@/components/hero";
 import Menubar from "@/components/menubar";
 import Projects from "@/components/projects";
 import ScrollToTop from "@/components/scrollToTop";
+import Testimonials from "@/components/testimonials";
 
 export default function Page() {
   return (
@@ -17,6 +18,7 @@ export default function Page() {
         <About />
         <Projects />
         <Experience />
+        <Testimonials />
       </div>
       <div className="w-full bg-zinc-950 p-4 flex items-center justify-center">
         <Footer />
