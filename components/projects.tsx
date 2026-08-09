@@ -3,7 +3,6 @@ import { IconBrandGithub, IconExternalLink, } from "@tabler/icons-react"
 import { Badge } from "./ui/badge"
 import { useRef } from "react"
 import { Button } from "./ui/button"
-import { title } from "process"
 
 export default function Projects() {
   const projects = [
@@ -78,10 +77,10 @@ export default function Projects() {
   return (
     <div id="projects" className="sm:w-5xl w-full max-sm:px-4 py-12 self-center flex flex-col gap-4">
       <div className="flex flex-row items-center justify-between">
-        <div className="font-bold inline-flex whitespace-nowrap items-center text-2xl sm:text-4xl">
+        <h2 className="font-bold inline-flex whitespace-nowrap items-center text-2xl sm:text-4xl">
           <span className="text-primary">02.</span>
           Featured Projects
-        </div>
+        </h2>
         <Button
           variant="outline"
           className="max-sm:hidden"
@@ -118,14 +117,20 @@ export default function Projects() {
                 </div>
                 <div className="flex flex-row gap-2 z-20 sm:hidden">
                   {project.hasGit &&
-                    <div onClick={() => window.open(project.gitLink, "_blank")} >
+                    <button
+                      onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.open(project.gitLink, "_blank"); }}
+                      aria-label={`${project.title} GitHub repository`}
+                    >
                       <IconBrandGithub size={20} className="hover:text-primary transition-all" />
-                    </div>
+                    </button>
                   }
                   {project.hasLive &&
-                    <div onClick={() => window.open(project.liveLink, "_blank")}>
+                    <button
+                      onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.open(project.liveLink, "_blank"); }}
+                      aria-label={`${project.title} live demo`}
+                    >
                       <IconExternalLink size={20} className="hover:text-primary transition-all" />
-                    </div>
+                    </button>
                   }
                 </div>
 
@@ -184,14 +189,20 @@ export default function Projects() {
               </div>
               <div className="flex flex-row gap-2 z-20 max-sm:hidden">
                 {project.hasGit &&
-                  <div onClick={() => window.open(project.gitLink, "_blank")} >
+                  <button
+                    onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.open(project.gitLink, "_blank"); }}
+                    aria-label={`${project.title} GitHub repository`}
+                  >
                     <IconBrandGithub className="hover:text-primary transition-all" />
-                  </div>
+                  </button>
                 }
                 {project.hasLive &&
-                  <div onClick={() => window.open(project.liveLink, "_blank")}>
+                  <button
+                    onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.open(project.liveLink, "_blank"); }}
+                    aria-label={`${project.title} live demo`}
+                  >
                     <IconExternalLink className="hover:text-primary transition-all" />
-                  </div>
+                  </button>
                 }
               </div>
               {/* <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-blue-500">View on GitHub</a> */}

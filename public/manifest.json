@@ -1,0 +1,16 @@
+{
+  "name": "Tanzim Khan Shanto — Full-Stack Developer",
+  "short_name": "Tanzim Shanto",
+  "description": "Full-stack developer building fast, type-safe web apps with Next.js, Astro, and Go.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#d4a015",
+  "icons": [
+    {
+      "src": "/images/self-photo.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    }
+  ]
+}

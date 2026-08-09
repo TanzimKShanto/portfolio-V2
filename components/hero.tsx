@@ -12,14 +12,11 @@ const Intro = () => {
       </div>
       <div className="sm:w-5xl max-sm:px-4 w-full py-4 flex text-accent flex-row z-10 self-center items-end justify-between relative">
         <div className="flex flex-col gap-2 justify-center">
-          <h1 className="sm:text-xl text-zinc-900 dark:text-zinc-300">Hi, my name is</h1>
+          <span className="sm:text-xl text-zinc-900 dark:text-zinc-300">Hi, my name is</span>
           <h1 className="sm:text-4xl text-2xl font-bold flex flex-col text-zinc-900 dark:text-zinc-300">
             Tanzim Khan Shanto.
           </h1>
         </div>
-        {/* <div className="flex flex-row relative items-center justify-center w-50 h-50 rotate-2 hover:animate-wiggle"> */}
-        {/*   <img src="/images/self-photo-nobg.png" alt="Hero" className="h-full w-full bg-radial-[at_85%_15%] from-white to-primary to-75% touch-manipulation" /> */}
-        {/* </div> */}
       </div >
     </div>
   )
@@ -38,7 +35,7 @@ export default function Hero() {
             <span className="sm:text-sm text-xs text-muted-foreground pt-2">Software Developer · System Designer · Problem Solver</span>
             <div className="sm:w-5xl w-full relative">
               <DecryptingText className="absolute inset-0 max-sm:text-sm" targetText={heroText} speed={0.5} />
-              <h1 className="opacity-0 max-sm:text-sm">{heroText}</h1>
+              <div aria-hidden="true" className="opacity-0 max-sm:text-sm">{heroText}</div>
             </div>
           </div>
           <div className="self-start sm:w-5xl w-full flex flex-row gap-4">

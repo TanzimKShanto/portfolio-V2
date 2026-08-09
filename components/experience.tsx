@@ -34,12 +34,12 @@ export default function Experience() {
   ]
   return (
     <div id="experience" className="sm:w-5xl w-full max-sm:px-4 py-12 flex flex-col self-center gap-8">
-      <h1 className="font-bold sm:text-4xl text-2xl">
+      <h2 className="font-bold sm:text-4xl text-2xl">
         <span className="text-primary">03.</span>
         Experience
-      </h1>
+      </h2>
       <div className="flex flex-col gap-4 relative">
-        <img src="/images/cat-pixel-sticker.gif" alt="Hero" className="h-20 w-20 absolute -top-14 right-2 z-10 touch-manipulation" />
+        <img src="/images/cat-pixel-sticker.gif" alt="" role="presentation" className="h-20 w-20 absolute -top-14 right-2 z-10 touch-manipulation" />
         {experienceData.map((experience, index) => (
           <div key={index} className="flex flex-row sm:gap-8 gap-4">
             <div className="flex flex-col items-center gap-1">

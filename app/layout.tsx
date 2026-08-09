@@ -2,12 +2,21 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Providers from "@/components/provider";
+import JsonLd from "@/components/jsonLd";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://tanzimk-shanto.vercel.app"),
   title: "Tanzim Khan Shanto — Full-Stack Developer",
   description: "Full-stack developer building fast, type-safe web apps with Next.js, Astro, and Go. Passionate about performance and clean UI.",
   keywords: "Tanzim Khan Shanto, Full Stack Developer, Next.js, Astro, Go, Web Developer",
+  alternates: {
+    canonical: "https://tanzimk-shanto.vercel.app",
+  },
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/images/self-photo.png",
+  },
+  manifest: "/manifest.json",
   openGraph: {
     title: "Tanzim Khan Shanto — Full-Stack Developer",
     description: "Full-stack developer building fast, type-safe web apps with Next.js, Astro, and Go. Passionate about performance and clean UI.",
@@ -59,9 +68,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning className={jetbrainsMono.variable}>
+      <head>
+        <link rel="manifest" href="/manifest.json" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased relative min-h-screen`}
       >
+        <JsonLd />
         <Providers>{children}</Providers>
       </body>
     </html>

@@ -27,10 +27,10 @@ export default function Testimonials() {
 
   return (
     <div id="testimonials" className="sm:w-5xl w-full max-sm:px-4 py-12 self-center flex flex-col gap-8">
-      <h1 className="font-bold sm:text-4xl text-2xl">
-        <span className="text-primary">05.</span>
+      <h2 className="font-bold sm:text-4xl text-2xl">
+        <span className="text-primary">04.</span>
         Testimonials
-      </h1>
+      </h2>
       <div className="grid sm:grid-cols-2 grid-cols-1 gap-4 sm:gap-6">
         {testimonials.map((testimonial, index) => (
           <Card key={index} className="bg-zinc-900 text-accent dark:text-zinc-300 border border-zinc-800 relative">

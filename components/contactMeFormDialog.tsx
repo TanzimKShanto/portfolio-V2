@@ -73,7 +73,7 @@ export default function ContactMeFormDialog() {
                 <Field>
                   <FieldLabel htmlFor={field.name}>Email</FieldLabel>
                   <FieldContent>
-                    <Input aria-invalid={fieldState.invalid} placeholder="yourEmail@email.com (if you'd like a response)" {...field} />
+                    <Input id={field.name} aria-invalid={fieldState.invalid} placeholder="yourEmail@email.com (if you'd like a response)" {...field} />
                   </FieldContent>
                   <FieldError>{form.formState.errors.email?.message}</FieldError>
                 </Field>
@@ -88,6 +88,7 @@ export default function ContactMeFormDialog() {
                   <FieldContent>
                     <InputGroup>
                       <InputGroupTextarea
+                        id={field.name}
                         aria-invalid={fieldState.invalid}
                         placeholder="Type your message here"
                         rows={4}

@@ -1,7 +1,6 @@
 import { IconBrandFacebook, IconBrandGithub, IconBrandInstagram, IconBrandLinkedin, IconBrandWhatsapp } from "@tabler/icons-react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Separator } from "./ui/separator";
-import { title } from "process";
 
 export default function Footer() {
   const iconSize = 24;
@@ -22,11 +21,11 @@ export default function Footer() {
   ]
   return (
     <div id="contact" className="flex flex-col items-center justify-center gap-8 w-5xl py-6">
-      <h1 className="font-bold text-accent dark:text-zinc-300">
+      <h2 className="font-bold text-accent dark:text-zinc-300">
         <span className="text-primary">05.</span>
         Contact
-      </h1>
-      <h1 className="text-accent sm:text-6xl text-4xl font-bold dark:text-zinc-300">Let&apos;s Talk.</h1>
+      </h2>
+      <p className="text-accent sm:text-6xl text-4xl font-bold dark:text-zinc-300">Let&apos;s Talk.</p>
       <div className="grid grid-cols-2 gap-4">
         <Card className="bg-zinc-900 text-accent dark:text-zinc-300 border border-zinc-800">
           <CardHeader>
@@ -49,6 +48,8 @@ export default function Footer() {
         {sectionIconNavs.map((link, index) =>
           <a
             target="_blank"
+            rel="noopener noreferrer"
+            aria-label={link.title}
             className="hover:text-primary text-accent dark:text-zinc-300 dark:hover:text-primary"
             key={index}
             href={link.href}>

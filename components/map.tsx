@@ -68,9 +68,11 @@ export default function MapBanner() {
         ref={mapContainer}
         className="w-full self-center"
         style={{ height: "250px" }}
+        role="img"
+        aria-label="Interactive map showing Dhaka, Bangladesh"
       />
-      <div className="absolute inset-0 cursor-default z-100" />
-      <div className="absolute inset-0 bg-linear-to-b from-transparent from-15% to-white dark:to-black" />
+      <div className="absolute inset-0 cursor-default z-100" aria-hidden="true" />
+      <div className="absolute inset-0 bg-linear-to-b from-transparent from-15% to-white dark:to-black" aria-hidden="true" />
     </div>
   );
 }

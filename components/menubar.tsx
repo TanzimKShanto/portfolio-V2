@@ -59,8 +59,11 @@ export default function Menubar() {
   const [isOpen, setIsOpen] = React.useState(false);
   const toggleDrawer = () => setIsOpen(!isOpen);
 
+  const [mounted, setMounted] = React.useState(false);
+  React.useEffect(() => setMounted(true), []);
+
   return (
-    <div className={`flex flex-row items-center justify-center sticky top-0 shadow-xs bg-background h-16 z-50 transition-all duration-500 w-full 
+    <nav aria-label="Main navigation" className={`flex flex-row items-center justify-center sticky top-0 shadow-xs bg-background h-16 z-50 transition-all duration-500 w-full 
       ${scrollDir === "down" ? "-translate-y-full" : "translate-y-0"}
 `}>
       <div className="flex flex-row gap-6 items-center justify-end max-sm:px-4 container h-full">
@@ -76,6 +79,8 @@ export default function Menubar() {
         {sectionIconNavs.map((link, index) =>
           <a
             target="_blank"
+            rel="noopener noreferrer"
+            aria-label={link.title}
             className="hover:text-primary max-sm:hidden"
             key={index}
             href={link.href}>
@@ -84,20 +89,23 @@ export default function Menubar() {
         )}
         <Tooltip>
           <TooltipTrigger asChild className="">
-            <Button variant={"ghost"} size={"icon"} className="hover:bg-transparent w-5 h-5 dark:hover:bg-transparent hover:text-primary" onClick={themeToggle}>
-              <IconBrightness className="min-w-5 min-h-5" />
+            <Button variant={"ghost"} size={"icon"} className="hover:bg-transparent w-5 h-5 dark:hover:bg-transparent hover:text-primary" onClick={themeToggle} aria-label="Toggle dark mode">
+              <IconBrightness className="min-w-5 min-h-5" aria-hidden="true" />
             </Button>
           </TooltipTrigger>
           <TooltipContent>
             Toggle Mode <span className="px-2 z-100 py-0.5 bg-muted/20">D</span>
           </TooltipContent>
         </Tooltip>
+        {mounted && (
         <Drawer direction="right" open={isOpen} onOpenChange={toggleDrawer}>
           <DrawerTrigger asChild className="sm:hidden">
-            <IconMenu />
+            <Button variant="ghost" size="icon" aria-label="Open menu">
+              <IconMenu />
+            </Button>
           </DrawerTrigger>
           <DrawerContent className="flex flex-col gap-4 p-4">
-            <DrawerClose className="w-full flex items-end justify-end"><IconX /></DrawerClose>
+            <DrawerClose className="w-full flex items-end justify-end"><IconX aria-label="Close menu" /></DrawerClose>
             {sectionNavs.map((link, index) =>
               <a
                 onClick={toggleDrawer}
@@ -112,6 +120,8 @@ export default function Menubar() {
               {sectionIconNavs.map((link, index) =>
                 <a
                   target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={link.title}
                   className="hover:text-primary"
                   key={index}
                   href={link.href}>
@@ -121,7 +131,8 @@ export default function Menubar() {
             </div>
           </DrawerContent>
         </Drawer>
+        )}
       </div>
-    </div>
+    </nav>
   );
 }
