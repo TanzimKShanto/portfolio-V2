@@ -8,7 +8,7 @@
   "theme_color": "#d4a015",
   "icons": [
     {
-      "src": "/images/self-photo.png",
+      "src": "/images/self-photo.jpg",
       "sizes": "1024x1024",
       "type": "image/png"
     }

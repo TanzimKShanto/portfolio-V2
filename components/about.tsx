@@ -23,7 +23,7 @@ export default function About() {
 
         <div className="flex sm:flex-row-reverse flex-col  justify-center gap-20">
           <div className="flex flex-row relative items-center justify-center w-full sm:min-w-90 sm:h-90 aspect-square rotate-2 hover:animate-wiggle">
-            <img src="/images/self-photo-nobg.png" alt="Portrait of Tanzim Khan Shanto" className="h-full w-full bg-radial-[at_85%_15%] from-white to-primary to-75% touch-manipulation" />
+            <img src="/images/self-photo-nobg.webp" alt="Portrait of Tanzim Khan Shanto" className="h-full w-full bg-radial-[at_85%_15%] from-white to-primary to-75% touch-manipulation" />
           </div>
 
           <div className="flex flex-col gap-4">

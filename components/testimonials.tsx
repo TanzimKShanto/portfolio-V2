@@ -10,7 +10,7 @@ export default function Testimonials() {
       role: "CEO",
       company: "Paipixel LLC",
       quote: "Tanzim built our agency website paipixel.com with impressive speed and attention to detail. The site is fast, fully responsive, and performs flawlessly across all devices. Delivered ahead of schedule — exceeded our expectations.",
-      avatar: "/images/client1.jpeg",
+      avatar: "/images/client1.webp",
       rating: 5
     },
     {
@@ -18,7 +18,7 @@ export default function Testimonials() {
       role: "Sr. Graphic Designer & Account Asst.",
       company: "Tac Perfumes",
       quote: "Tanzim is an exceptionally talented developer with strong problem-solving skills and a passion for quality. A reliable team player who communicates clearly, meets deadlines effortlessly, and continuously embraces new technologies. Highly recommended.",
-      avatar: "/images/client2.jpeg",
+      avatar: "/images/client2.webp",
       rating: 5
     }
   ]

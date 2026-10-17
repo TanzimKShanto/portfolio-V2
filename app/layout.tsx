@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: "/favicon.ico",
-    apple: "/images/self-photo.png",
+    apple: "/images/self-photo.jpg",
   },
   manifest: "/manifest.json",
   openGraph: {
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     description: "Full-stack developer building fast, type-safe web apps with Next.js, Astro, and Go. Passionate about performance and clean UI.",
     images: [
       {
-        url: "https://tanzimk-shanto.vercel.app/images/self-photo.png",
+        url: "https://tanzimk-shanto.vercel.app/images/self-photo.jpg",
         width: 1024,
         height: 1024,
         alt: "Tanzim Khan Shanto — Full-Stack Developer",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     title: "Tanzim Khan Shanto — Full-Stack Developer",
     description: "Full-stack developer building fast, type-safe web apps with Next.js, Astro, and Go. Passionate about performance and clean UI.",
     creator: "@tanzimkshanto",
-    images: ["https://tanzimk-shanto.vercel.app/images/self-photo.png"],
+    images: ["https://tanzimk-shanto.vercel.app/images/self-photo.jpg"],
   },
   robots: {
     index: true,

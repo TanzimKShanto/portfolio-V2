@@ -16,7 +16,7 @@ export default function JsonLd() {
           "https://www.facebook.com/TanzimKShanto",
           "https://www.instagram.com/tanzimkshanto/",
         ],
-        image: "https://tanzimk-shanto.vercel.app/images/self-photo.png",
+        image: "https://tanzimk-shanto.vercel.app/images/self-photo.jpg",
       },
       {
         "@type": "WebSite",
