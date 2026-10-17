@@ -1,8 +1,8 @@
 "use client"
 
-import { useState } from "react"
 import { IconChevronLeft, IconChevronRight } from "@tabler/icons-react"
 import { cn } from "@/lib/utils"
+import { useAutoRotate } from "@/hooks/useAutoRotate"
 
 type ProjectCarouselProps = {
   images: string[]
@@ -11,14 +11,10 @@ type ProjectCarouselProps = {
 }
 
 export default function ProjectCarousel({ images, alt, className }: ProjectCarouselProps) {
-  const [index, setIndex] = useState(0)
   const count = images.length
+  const { index, goTo, prev, next, announcement, containerProps } = useAutoRotate({ count })
 
   if (count === 0) return null
-
-  const go = (next: number) => setIndex(((next % count) + count) % count)
-  const prev = () => go(index - 1)
-  const next = () => go(index + 1)
 
   const onKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
     if (e.key === "ArrowLeft") {
@@ -36,6 +32,7 @@ export default function ProjectCarousel({ images, alt, className }: ProjectCarou
       aria-roledescription="carousel"
       aria-label={`${alt} screenshots`}
       tabIndex={0}
+      {...containerProps}
       onKeyDown={onKeyDown}
       className={cn(
         "group/carousel relative h-full w-full overflow-hidden bg-zinc-100 dark:bg-zinc-800 focus-visible:outline-2 focus-visible:outline-primary",
@@ -80,7 +77,7 @@ export default function ProjectCarousel({ images, alt, className }: ProjectCarou
               <button
                 key={i}
                 type="button"
-                onClick={() => go(i)}
+                onClick={() => goTo(i)}
                 aria-label={`Go to image ${i + 1}`}
                 aria-current={i === index}
                 className={cn(
@@ -96,7 +93,7 @@ export default function ProjectCarousel({ images, alt, className }: ProjectCarou
           </div>
 
           <span className="sr-only" aria-live="polite">
-            Image {index + 1} of {count}
+            {announcement}
           </span>
         </>
       )}
