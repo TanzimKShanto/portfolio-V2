@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tanzimk-shanto.vercel.app/sitemap.xml
+Sitemap: https://tanzimkshanto.dev/sitemap.xml

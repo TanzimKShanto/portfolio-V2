@@ -4,24 +4,24 @@ export default function JsonLd() {
     "@graph": [
       {
         "@type": "Person",
-        "@id": "https://tanzimk-shanto.vercel.app/#person",
+        "@id": "https://tanzimkshanto.dev/#person",
         name: "Tanzim Khan Shanto",
         givenName: "Tanzim Khan",
         familyName: "Shanto",
         jobTitle: "Full-Stack Developer",
-        url: "https://tanzimk-shanto.vercel.app",
+        url: "https://tanzimkshanto.dev",
         sameAs: [
           "https://github.com/tanzimKshanto",
           "https://www.linkedin.com/in/tanzimKshanto/",
           "https://www.facebook.com/TanzimKShanto",
           "https://www.instagram.com/tanzimkshanto/",
         ],
-        image: "https://tanzimk-shanto.vercel.app/images/self-photo.jpg",
+        image: "https://tanzimkshanto.dev/images/self-photo.jpg",
       },
       {
         "@type": "WebSite",
-        "@id": "https://tanzimk-shanto.vercel.app/#website",
-        url: "https://tanzimk-shanto.vercel.app",
+        "@id": "https://tanzimkshanto.dev/#website",
+        url: "https://tanzimkshanto.dev",
         name: "Tanzim Khan Shanto",
         description:
           "Full-stack developer building fast, type-safe web apps with Next.js, Astro, and Go.",
@@ -31,7 +31,7 @@ export default function JsonLd() {
           "target": {
             "@type": "EntryPoint",
             urlTemplate:
-              "https://tanzimk-shanto.vercel.app/?s={search_term_string}",
+              "https://tanzimkshanto.dev/?s={search_term_string}",
           },
           "query-input": "required name=search_term_string",
         },
